@@ -1,6 +1,7 @@
 package test;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class calculator {
 
@@ -13,6 +14,7 @@ public static void main(String[] args) {
     double zeroAnswer = 0;
     double negAnswer = 0;
     double posAnswer = 0;
+    double randAnswer = 0;
     boolean positive = false;
     double inputA, inputB;
     char operator;
@@ -21,7 +23,7 @@ public static void main(String[] args) {
      while (done == false) {
     	positive = false;
         System.out.print("Please enter your expression: ");
-        
+        randAnswer = ThreadLocalRandom.current().nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
 
         inputA = input.next().charAt(0);
         inputA = 0;
@@ -73,11 +75,11 @@ public static void main(String[] args) {
         	System.out.print("Possible edge cases are: ");
         	if(!positive)
         	{
-        		System.out.println(Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer));   
+        		System.out.println(Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Double.toString(randAnswer));   
         	}
         	else 
         	{
-        		System.out.println(Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Double.toString(posAnswer));
+        		System.out.println(Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Double.toString(posAnswer) + ',' + Double.toString(randAnswer));
         	}
     }       
 
