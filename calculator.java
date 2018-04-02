@@ -11,7 +11,7 @@ public static void main(String[] args) {
 
     maths Maths = new maths();
 
-    double zeroAnswer = 0;
+    double zeroAnswer = 0; //Possible refactor needed
     double negAnswer = 0;
     double posAnswer = 0;
     int randAnswer = 0;
