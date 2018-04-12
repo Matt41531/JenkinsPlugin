@@ -16,7 +16,8 @@ public static void main(String[] args) {
     double posAnswer = 0;
     int randAnswer = 0;
     boolean positive = false;
-    double inputA, inputB;
+    double inputA, inputB, inputVar, inputEq;
+    char inputStr;
     char operator;
     boolean done = false;
 
@@ -72,7 +73,7 @@ public static void main(String[] args) {
             
         }
         
-        	System.out.print("Possible edge cases are: ");
+        	System.out.print("Possible edge cases for " + inputStr + " are: ");
         	if(!positive)
         	{
         		System.out.println(Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Integer.toString(randAnswer));   
