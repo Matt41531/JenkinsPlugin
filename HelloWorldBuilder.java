@@ -23,7 +23,6 @@ import org.kohsuke.stapler.DataBoundSetter;
 public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
     private final String name;
-    private boolean useFrench;
 
     @DataBoundConstructor
     public HelloWorldBuilder(String name) {
@@ -32,10 +31,6 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
     public String getName() {
         return name;
-    }
-
-    public boolean isUseFrench() {
-        return useFrench;
     }
     
     public static String calculate(String[] args) {
@@ -56,7 +51,6 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
          while (done == false) {
         	positive = false;
-            System.out.print("Please enter your expression: ");
             randAnswer = ThreadLocalRandom.current().nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
 
             inputA = input.next().charAt(0);
@@ -113,7 +107,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
             	}
             	else 
             	{
-            		string result = (Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Double.toString(posAnswer) + ',' + Double.toString(randAnswer));
+            		String result = (Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Double.toString(posAnswer) + ',' + Double.toString(randAnswer));
             	}
         }       
 
@@ -121,36 +115,23 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         return result;
 
       }
-
-    }
-
-    @DataBoundSetter
-    public void setUseFrench(boolean useFrench) {
-        this.useFrench = useFrench;
-    }
-
+    
     @Override
     public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher, TaskListener listener) throws InterruptedException, IOException {
-        if (useFrench) {
-            listener.getLogger().println("Bonjour, " + name + "!");
-        } else {
-            listener.getLogger().println(calculate(name));
-        }
+    	listener.getLogger().println(calculate(name));
+    
     }
 
     @Symbol("greet")
     @Extension
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
 
-        public FormValidation doCheckName(@QueryParameter String value, @QueryParameter boolean useFrench)
+        public FormValidation doCheckName(@QueryParameter String value)
                 throws IOException, ServletException {
             if (value.length() == 0)
                 return FormValidation.error(Messages.HelloWorldBuilder_DescriptorImpl_errors_missingName());
             if (value.length() < 4)
                 return FormValidation.warning(Messages.HelloWorldBuilder_DescriptorImpl_warnings_tooShort());
-            if (!useFrench && value.matches(".*[éáàç].*")) {
-                return FormValidation.warning(Messages.HelloWorldBuilder_DescriptorImpl_warnings_reallyFrench());
-            }
             return FormValidation.ok();
         }
 
