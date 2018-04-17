@@ -1,4 +1,4 @@
-package test;
+package io.jenkins.plugins.sample;
 
 public class maths {
 

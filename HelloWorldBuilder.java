@@ -33,7 +33,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         return name;
     }
     
-    public static String calculate(String[] args) {
+    public String calculate(String[] args) {
 
     	String input = name;
         maths Maths = new maths();
