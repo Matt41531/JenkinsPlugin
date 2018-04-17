@@ -1,6 +1,7 @@
 package io.jenkins.plugins.sample;
 
 import java.util.Scanner;
+import java.util.Random;
 
 import hudson.Launcher;
 import hudson.Extension;
@@ -34,12 +35,11 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
     }
     
     public String calculate(String[] args) {
-
     	String input = name;
         maths Maths = new maths();
 
-        double zeroAnswer = 0; //Possible refactor needed here at some point
-        double negAnswer = 0; //Change variable names
+        double zeroAnswer = 0; 
+        double negAnswer = 0; 
         double posAnswer = 0;
         int randAnswer = 0;
         boolean positive = false;
@@ -55,7 +55,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
             inputA = input.next().charAt(0);
             inputA = 0;
             operator = input.next().charAt(0);
-            inputB = input.nextDouble();        
+            inputB = input.next().charAt(0);        
             switch (operator) {
                 case '+': {
                 			zeroAnswer = Maths.subtract(inputA, inputB);
