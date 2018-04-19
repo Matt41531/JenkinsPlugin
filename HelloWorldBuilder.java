@@ -46,7 +46,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         double inputA, inputB, inputVar, inputEq;
         char inputStr;
         char operator;
-        String result;
+        String result = "hello";
         boolean done = false;
 
          while (done == false) {
