@@ -98,6 +98,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
                 			positive = true;
                 }
                 		  break;
+            }
             
             	System.out.print("Possible edge cases for " + inputStr + " are: ");
             	if(!positive)
@@ -110,8 +111,9 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
             	}      
             	
         input.close();
-        return result;
-
+        
+            }
+         return result;
       }
     
     @Override
@@ -145,7 +147,4 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
     }
 
-     }
-
     }
-}
