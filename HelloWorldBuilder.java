@@ -99,7 +99,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
                 		  break;
             }
             
-            	System.out.print("Possible edge cases for " + inputStr + " are: ");
+            	System.out.print("Possible edge cases for " + inputA + " are: ");
             	if(!positive)
             	{
             		result = (Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Integer.toString(randAnswer));   
