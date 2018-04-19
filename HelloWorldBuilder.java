@@ -35,7 +35,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         return name;
     }
     //Calculator.java here
-    public String calculate(String[] args) {
+    public String calculate(String args) {
     	Scanner input = new Scanner(name);
         maths Maths = new maths();
         
