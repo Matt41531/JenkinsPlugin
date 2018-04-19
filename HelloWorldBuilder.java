@@ -33,11 +33,11 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
     public String getName() {
         return name;
     }
-    
+    //Calculator.java here
     public String calculate(String[] args) {
     	Scanner input = new Scanner(name);
         maths Maths = new maths();
-
+        
         double zeroAnswer = 0; 
         double negAnswer = 0; 
         double posAnswer = 0;
