@@ -21,7 +21,7 @@ import java.io.IOException;
 import jenkins.tasks.SimpleBuildStep;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundSetter;
-
+//TestCase BUilder
 public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
     private final String name;
@@ -34,7 +34,6 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
     public String getName() {
         return name;
     }
-    //Calculator.java here
     public String calculate(String args) {
     	Scanner input = new Scanner(name);
         maths Maths = new maths();
@@ -146,5 +145,4 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         }
 
     }
-
-    }
+}
