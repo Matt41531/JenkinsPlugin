@@ -21,7 +21,7 @@ import java.io.IOException;
 import jenkins.tasks.SimpleBuildStep;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundSetter;
-//TestCase Builder Stuff goes here
+//TestCase Builder
 public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
     private final String name;
