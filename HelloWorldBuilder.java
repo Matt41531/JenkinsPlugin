@@ -49,7 +49,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         String result = "hello";
         boolean done = false;
 
-         while (done == false) {
+      //   while (done == false) {
         	positive = false;
             randAnswer = ThreadLocalRandom.current().nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE);
 
@@ -111,7 +111,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
             	
         input.close();
         
-            }
+           // }
          return result;
       }
     
