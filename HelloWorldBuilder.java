@@ -1,6 +1,7 @@
 package io.jenkins.plugins.sample;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.Random;
 
 import hudson.Launcher;
@@ -46,6 +47,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
         double inputA, inputB, inputVar, inputEq;
         char inputStr;
         char operator;
+        String result;
         boolean done = false;
 
          while (done == false) {
@@ -96,20 +98,17 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
                 			positive = true;
                 }
                 		  break;
-                
-            }
             
             	System.out.print("Possible edge cases for " + inputStr + " are: ");
             	if(!positive)
             	{
-            		String result = (Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Integer.toString(randAnswer));   
+            		result = (Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Integer.toString(randAnswer));   
             	}
             	else 
             	{
-            		String result = (Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Double.toString(posAnswer) + ',' + Double.toString(randAnswer));
-            	}
-        }       
-
+            		result = (Double.toString(zeroAnswer) + ',' + Double.toString(negAnswer) + ',' + Double.toString(posAnswer) + ',' + Double.toString(randAnswer));
+            	}      
+            	
         input.close();
         return result;
 
