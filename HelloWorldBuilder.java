@@ -116,7 +116,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
     
     @Override
     public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher, TaskListener listener) throws InterruptedException, IOException {
-    	//listener.getLogger().println(calculate(name));
+    	listener.getLogger().println(calculate(name));
     
     }
 
@@ -145,4 +145,7 @@ public class HelloWorldBuilder extends Builder implements SimpleBuildStep {
 
     }
 
+     }
+
+    }
 }
